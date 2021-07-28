@@ -3,6 +3,7 @@ from asgiref.sync import async_to_sync
 import json
 from django.core import serializers
 from .models import Notification
+
 class TestConsumer(WebsocketConsumer):
 
     def connect(self):
