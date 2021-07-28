@@ -2,7 +2,7 @@ from channels.generic.websocket import WebsocketConsumer, AsyncJsonWebsocketCons
 from asgiref.sync import async_to_sync
 import json
 from django.core import serializers
-from .models import Notification
+# from .models import Notification
 
 class TestConsumer(WebsocketConsumer):
 
@@ -17,15 +17,15 @@ class TestConsumer(WebsocketConsumer):
         self.room_name = "test_consumer"
         self.room_group_name = "test_consumer_group"
        
-        data = list(Notification.objects.all())
-        notification = serializers.serialize('json', data)
+        # data = list(Notification.objects.all())
+        # notification = serializers.serialize('json', data)
         async_to_sync(self.channel_layer.group_add)(
             self.room_group_name, 
             self.channel_name
         )
         self.accept()
         # self.send(text_data=json.dumps({'status': 'connected from django channels'}))
-        self.send(text_data=json.dumps({'status': 'connected from django channels', 'data': notification}))
+        self.send(text_data=json.dumps({'status': 'connected from django channels'}))
         # return super().connect()
     
     def receive(self, text_data):

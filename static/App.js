@@ -1,7 +1,7 @@
 console.log("template loded");
 
 
-let socket = new WebSocket("ws://localhost:8000/ws/test/");
+let socket = new WebSocket("ws://dipendranath.com.np:8000/ws/test/");
 socket.onopen = function(e) {
     alert("[open] Connection established");
     alert("Sending to server");
