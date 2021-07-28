@@ -7,10 +7,10 @@ class TestConsumer(WebsocketConsumer):
 
     def connect(self):
         
-        print(self.scope['user'])
-        print(self.scope["headers"])
-        headers = dict(self.scope["headers"])
-        print(headers[b'bearer'])
+        # print(self.scope['user'])
+        # print(self.scope["headers"])
+        # headers = dict(self.scope["headers"])
+        # print(headers[b'bearer'])
         # if b'bearer' in self.scope["headers"]:
         #     print(b'bearer'.decode('UTF-8'))
         self.room_name = "test_consumer"
